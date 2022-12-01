@@ -18,7 +18,7 @@ section{
   font-family: cabrito-didone-normal,Times New Roman,serif;
 }
 .slider_handler{
-    height: 80vh;
+    height: 100vh;
     position: relative;
     display: flex;
     justify-content: center;
@@ -41,7 +41,7 @@ section{
     transition: anime 5s linear infinite;
 }
 .text_slide{
-  z-index: -1;
+  z-index: 1;
   position: absolute;
   width: 100%;
     font-family: cabrito-didone-normal,Times New Roman,serif;
@@ -86,10 +86,14 @@ section{
     max-height: 75%;
     max-width: 50%;
   }
+  .product{
+    text-decoration: none;
+    color: #0c0d12;
+    width: 100%;
+  }
   .product_item{
     width: 100%;
     display: flex;
-    z-index: 9;
     flex-direction: column;
     position: relative;
   }

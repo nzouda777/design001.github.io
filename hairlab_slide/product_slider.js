@@ -4,11 +4,6 @@ if (window.screen.width <= 500) {
         slidesPerView: 1,
         spaceBetween: 30,
         loop: true,
-        centeredSlides: true,
-        autoplay: {
-          delay: 2500,
-          disableOnInteraction: false,
-        },
         navigation: {
           nextEl: ".swiper-button-next",
           prevEl: ".swiper-button-prev",
@@ -26,11 +21,6 @@ if (window.screen.width <= 500) {
         slidesPerView: 2,
         spaceBetween: 30,
         loop: true,
-        centeredSlides: true,
-        autoplay: {
-          delay: 2500,
-          disableOnInteraction: false,
-        },
         navigation: {
           nextEl: ".swiper-button-next",
           prevEl: ".swiper-button-prev",
@@ -47,11 +37,6 @@ if (window.screen.width <= 500) {
           slidesPerView: 3,
           spaceBetween: 30,
         loop: true,
-        centeredSlides: true,
-        autoplay: {
-          delay: 2500,
-          disableOnInteraction: false,
-        },
           navigation: {
             nextEl: ".swiper-button-next",
             prevEl: ".swiper-button-prev",
