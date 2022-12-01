@@ -1,10 +1,14 @@
 
-(() => {
 if (window.screen.width <= 500) {
     var swiper = new Swiper(".mySwiper", {
         slidesPerView: 1,
         spaceBetween: 30,
         loop: true,
+        centeredSlides: true,
+        autoplay: {
+          delay: 2500,
+          disableOnInteraction: false,
+        },
         navigation: {
           nextEl: ".swiper-button-next",
           prevEl: ".swiper-button-prev",
@@ -12,6 +16,7 @@ if (window.screen.width <= 500) {
         pagination: {
           el: ".swiper-pagination",
           clickable: true,
+          dynamicBullets: true,
         },
       });
       console.log(window.screen.Width)
@@ -20,6 +25,12 @@ if (window.screen.width <= 500) {
     var swiper = new Swiper(".mySwiper", {
         slidesPerView: 2,
         spaceBetween: 30,
+        loop: true,
+        centeredSlides: true,
+        autoplay: {
+          delay: 2500,
+          disableOnInteraction: false,
+        },
         navigation: {
           nextEl: ".swiper-button-next",
           prevEl: ".swiper-button-prev",
@@ -27,6 +38,7 @@ if (window.screen.width <= 500) {
         pagination: {
           el: ".swiper-pagination",
           clickable: true,
+          dynamicBullets: true,
         },
       });
     }
@@ -34,6 +46,12 @@ if (window.screen.width <= 500) {
       var swiper = new Swiper(".mySwiper", {
           slidesPerView: 3,
           spaceBetween: 30,
+        loop: true,
+        centeredSlides: true,
+        autoplay: {
+          delay: 2500,
+          disableOnInteraction: false,
+        },
           navigation: {
             nextEl: ".swiper-button-next",
             prevEl: ".swiper-button-prev",
@@ -41,7 +59,7 @@ if (window.screen.width <= 500) {
           pagination: {
             el: ".swiper-pagination",
             clickable: true,
+            dynamicBullets: true,
           },
         });
       }
-    }) ()

@@ -3,9 +3,21 @@
     --swiper-theme-color: #0c0d12 !important;
     --swiper-navigation-size: 20px !important
 }
-
+section{
+  background: #eee;
+}
+.section-title{
+  text-align: center;
+  font-size: 1.2rem;
+  
+}
+.section-title .title{
+  font-weight: lighter;
+  letter-spacing: 5px;
+  font-family: cabrito-didone-normal,Times New Roman,serif;
+}
 .slider_handler{
-    height: 100vh;
+    height: 80vh;
     position: relative;
     display: flex;
     justify-content: center;
@@ -20,17 +32,21 @@
     position: absolute;
     z-index: 1;
     height: 100%;
-    width: 70vw;
+    width: 100vw;
     display: flex;
+    justify-content: center;
     align-items: center;
     opacity: 0;
     transition: anime 5s linear infinite;
 }
 .text_slide{
+  z-index: -1;
+  position: absolute;
+  width: 100%;
     font-family: cabrito-didone-normal,Times New Roman,serif;
     font-style: italic;
     font-size: 3rem;
-    transition: marky 32s linear infinite ;
+    animation: marky 20s linear infinite;
 }
 @keyframes marky {
     from { transform: translateX(0%); }
@@ -72,6 +88,7 @@
   .product_item{
     width: 100%;
     display: flex;
+    z-index: 9;
     flex-direction: column;
     position: relative;
   }
@@ -93,7 +110,7 @@
   }
   .product_item .img_handler{
     height: 299px;
-
+    z-index: 1;
   }
   .product_info .product_role{
     font-weight: 400;
@@ -146,7 +163,7 @@
     vertical-align: middle;
     justify-content: space-between;
     width: 30%;
-    margin: -10% auto;
+    margin: -5% auto;
   }
   .pagination :is(.swiper-button-prev, .swiper-button-next)::after{
     content: "";
