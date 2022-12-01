@@ -48,12 +48,11 @@ section{
   /* background: #000; */
     font-family: cabrito-didone-normal,Times New Roman,serif;
     font-style: italic;
-    font-size: 3rem;
-    animation: marky 20s linear infinite;
+    font-size: 4em;
 }
 @keyframes marky {
     from { transform: translateX(0%); }
-    to { transform: translateX(-50%); }
+    to { transform: translateX(-150%); }
   }
 .swiper {
     width: 70%;
@@ -111,6 +110,10 @@ section{
   }
   .product_item:hover::before{
     opacity: 0.2;
+  }
+  .product_item >.back_marquee:hover > .text_slide{
+
+    animation: marky 20s linear infinite;
   }
   .product_item > .back_marquee:hover{
     opacity: 1;
