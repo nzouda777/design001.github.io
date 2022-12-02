@@ -118,10 +118,9 @@ section{
   
   .product_item:hover > .marquee::before{
     opacity: 1;
-    z-index: -3;
   }
-  .product_item > .marquee:hover{
-    position: sticky;
+ .product_item:hover > .marquee:hover{
+  opacity: 0;
   }
   .product_item .img_handler{
     height: 299px;
@@ -225,7 +224,7 @@ section{
 .marquee{
   overflow: hidden;
   display: block;
-  z-index: -3;
+  position: initial;
   width: 100vw;
 }
 .marquee::before{

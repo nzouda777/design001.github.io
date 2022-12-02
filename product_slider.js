@@ -48,3 +48,10 @@ if (window.screen.width <= 500) {
           },
         });
       }
+let marks = document.querySelector(".marquee--navy")
+let prodItem = document.querySelector(".product_item")
+addEventListener('click',
+() => {
+  marks.classList.toggle("marquee")
+  console.log(marks)
+})
