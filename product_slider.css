@@ -50,12 +50,13 @@ section{
     width: 70%;
     height: 50%;
     margin: 0 5rem;
+
+    position: absolute;
   }
 
   .swiper-slide {
     text-align: center;
     font-size: 18px;
-    z-index: 3;
     min-width: 360px;
     background: transparent;
     /* Center slide text vertically */
@@ -88,6 +89,7 @@ section{
   }
   .product_item{
     width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     position: relative;
@@ -111,7 +113,12 @@ section{
   
   .product_item:hover > .marquee::before{
     opacity: 1;
-    z-index: -1;
+    z-index: -3;
+  }
+  .product_item > .marquee:hover{
+    background: #0fc;
+    color: #efc;
+    display: none;
   }
   .product_item .img_handler{
     height: 299px;
@@ -205,13 +212,18 @@ section{
     }
     
 }
-
+.marquee_handler{
+  position: relative;
+  height: 100%;
+  background: rgba(80, 77, 77, 0.267);
+  width: 100vw;
+  z-index: -3;
+}
 .marquee{
   overflow: hidden;
   display: block;
-  /* position: relative; */
   z-index: -3;
-  width: 100%;
+  width: 100vw;
 }
 .marquee::before{
   position: absolute;
@@ -223,7 +235,7 @@ section{
     font-style: italic;
     font-size: 4em;
   white-space: pre;
-  content: attr(data-text) "        " attr(data-text) "        " attr(data-text) "        " attr(data-text) "        " attr(data-text) "        " attr(data-text) "        " attr(data-text) "        " attr(data-text) "        " attr(data-text) "        " attr(data-text) "        " attr(data-text) "        " attr(data-text) "        " attr(data-text) "        " attr(data-text) "        " attr(data-text) "        " attr(data-text) "        " attr(data-text) "        " attr(data-text) "        " attr(data-text) "        " attr(data-text);
+  content: attr(data-text) "   " attr(data-text) "   " attr(data-text) "   " attr(data-text) "   " attr(data-text) "   " attr(data-text) "   " attr(data-text) "   " attr(data-text) "   " attr(data-text) "   " attr(data-text) "   " attr(data-text) "   " attr(data-text) "   " attr(data-text) "   " attr(data-text) "   " attr(data-text) "   " attr(data-text) "   " attr(data-text) "   " attr(data-text) "   " attr(data-text) "   " attr(data-text);
   width: fit-content;
   transform: translate3d(-2%, 0, 0);
   will-change: transform;
