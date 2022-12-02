@@ -110,15 +110,18 @@ section{
     z-index: 5;
     display: block;
   }
+  .product_item:hover{
+    /* opacity: 0.2; */
+    z-index: 5;
+    display: block;
+  }
   
   .product_item:hover > .marquee::before{
     opacity: 1;
     z-index: -3;
   }
   .product_item > .marquee:hover{
-    background: #0fc;
-    color: #efc;
-    display: none;
+    position: sticky;
   }
   .product_item .img_handler{
     height: 299px;
