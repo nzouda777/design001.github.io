@@ -83,6 +83,8 @@ section{
     text-decoration: none;
     color: #0c0d12;
     width: 100%;
+    position: relative;
+    
   }
   .product_item{
     width: 100%;
@@ -99,7 +101,7 @@ section{
     opacity: 0;
     transition: ease-in .7s;
     background: #ccc;
-    z-index: 1;
+    z-index: 2;
   }
   .product_item:hover::before{
     opacity: 0.2;
@@ -107,6 +109,7 @@ section{
   
   .product_item:hover > .marquee::before{
     opacity: 1;
+    z-index: -1;
   }
   .product_item .img_handler{
     height: 299px;
@@ -204,12 +207,13 @@ section{
 .marquee{
   overflow: hidden;
   display: block;
+  /* position: relative; */
   z-index: 2;
-  width: 100vw;
+  width: 100%;
 }
 .marquee::before{
   position: absolute;
-  z-index: -2;
+  /* z-index: -2; */
   opacity: 0;
   display: block;
   top: 15%;
@@ -233,20 +237,9 @@ section{
 }
 @keyframes marquee {
 	0% {
-    /**
-     * -2% is used to start scrolling with an offset (visual only)
-     */
 		transform: translate3d(-2%, 0, 0);
 	}
 	100% {
-    /**
-     * -2% offset has to be preserved
-     *
-     * Content is duplicated 20 times
-     * 100% / 20 = 5 % = "1 content length"
-     * 
-     * -1px seems to prevent a small jump between each loop
-     */
 		transform: translate3d(calc(-2% - 5% - 1px), 0, 0);
 	}
 }
