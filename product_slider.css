@@ -41,15 +41,7 @@ section{
     opacity: 0;
     transition: anime 5s linear infinite;
 }
-.text_slide{
-  z-index: 1;
-  position: absolute;
-  width: 100%;
-  /* background: #000; */
-    font-family: cabrito-didone-normal,Times New Roman,serif;
-    font-style: italic;
-    font-size: 4em;
-}
+
 @keyframes marky {
     from { transform: translateX(0%); }
     to { transform: translateX(-100%); }
@@ -97,6 +89,7 @@ section{
     display: flex;
     flex-direction: column;
     position: relative;
+    z-index: 2;
   }
   .product_item::before{
     content: "";
@@ -106,16 +99,13 @@ section{
     opacity: 0;
     transition: ease-in .7s;
     background: #ccc;
-    z-index: -1;
+    z-index: 1;
   }
   .product_item:hover::before{
     opacity: 0.2;
   }
-  .product_item >.back_marquee:hover > .text_slide{
-
-    animation: marky 20s linear infinite;
-  }
-  .product_item > .back_marquee:hover{
+  
+  .product_item:hover > .marquee::before{
     opacity: 1;
   }
   .product_item .img_handler{
@@ -209,4 +199,54 @@ section{
         min-width: 100%;
     }
     
+}
+
+.marquee{
+  overflow: hidden;
+  display: block;
+  z-index: 2;
+  width: 100vw;
+}
+.marquee::before{
+  position: absolute;
+  z-index: -2;
+  opacity: 0;
+  display: block;
+  top: 15%;
+  font-family: cabrito-didone-normal,Times New Roman,serif;
+    font-style: italic;
+    font-size: 4em;
+  white-space: pre;
+  content: attr(data-text) "        " attr(data-text) "        " attr(data-text) "        " attr(data-text) "        " attr(data-text) "        " attr(data-text) "        " attr(data-text) "        " attr(data-text) "        " attr(data-text) "        " attr(data-text) "        " attr(data-text) "        " attr(data-text) "        " attr(data-text) "        " attr(data-text) "        " attr(data-text) "        " attr(data-text) "        " attr(data-text) "        " attr(data-text) "        " attr(data-text) "        " attr(data-text);
+  width: fit-content;
+  transform: translate3d(-2%, 0, 0);
+  will-change: transform;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .marquee::before {
+    animation: marquee 6s linear infinite;
+  }
+  
+  .marquee--reverse::before {
+    animation-direction: reverse;
+  }
+}
+@keyframes marquee {
+	0% {
+    /**
+     * -2% is used to start scrolling with an offset (visual only)
+     */
+		transform: translate3d(-2%, 0, 0);
+	}
+	100% {
+    /**
+     * -2% offset has to be preserved
+     *
+     * Content is duplicated 20 times
+     * 100% / 20 = 5 % = "1 content length"
+     * 
+     * -1px seems to prevent a small jump between each loop
+     */
+		transform: translate3d(calc(-2% - 5% - 1px), 0, 0);
+	}
 }
